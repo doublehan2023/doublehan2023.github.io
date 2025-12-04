@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+ 
+
+  <title>
+    Han Wang's Portfolio
+  </title>
+
+  <meta name="description" content="This is Han Wang, a Junior Student at Rutgers University
+    majoring in Computer Science. I'm working as a Web Design and Web Development Intern at Thaddeus Resource Center.
+    Feel free to connect with me!" />
+  <meta name="keywords" content="Han Wang, HTML, CSS, JavaScript, React, Figma" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <!-- ***** Header ***** -->
+
+  <header class="header" role="banner" id="top">
+    <div class="row">
+      <nav class="nav" role="navigation">
+        <ul class="nav__items">
+          <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__text-box row">
+      <div class="header__text">
+        <h1 class="heading-primary">
+          <span>Han Wang</span>
+        </h1>
+        
+        <p>A Web Developer based in NJ, United States.</p>
+
+        <a href="#contact" class="btn btn--pink">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+
+
+
+        <!-- ***** About ***** -->
+
+    <section class="about" id="about">
+      <div class="row">
+        <h2>About Me</h2>
+        <div class="about__content">
+          <div class="about__text">
+            
+            <p>
+              Hi! I’m Han Wang — a Computer Science student at Rutgers University 
+              with a growing passion for web development and software engineering.
+              I'm currently working as a Web Design and Web Development Intern at 
+              Thaddeus Resource Center.
+              I enjoy building clean, user-focused digital experiences and continuously expanding 
+              my skills across frontend technologies. As a collaborative problem-solver, 
+              I love working with others to turn creative ideas into real products.
+            </p>
+            <a href="files/HanWang_Resume__Summer26_.pdf" class="btn">Download My Resume</a>
+          </div>
+
+          <div class="about__photo-container">
+            <img class="about__photo" src="images/headshot.png" alt="Han Wang's headshot" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <!-- ***** Work ***** -->
+
+    <section class="work" id="work">
+      <div class="row">
+        <h2>My Work</h2>
+        <div class="work__boxes">
+
+          <!-- Each div with the work__box class is a project. -->
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Personal Portfolio</h3>
+              <p>
+                A personal portfolio website to showcase my work and skills.
+              </p>
+              <ul class="work__list">
+                <li>HTML</li>
+                <li>SCSS</li>
+                <li>JavaScript</li>
+              </ul>
+
+              <div class="work__links">
+                <a href="https://nisar.surge.sh" target="_blank" class="link__text">
+                  Visit Site <span>&rarr;</span>
+                </a>
+                <a href="https://github.com/doublehan2023/doublehan2023.github.io" title="View Source Code" target="_blank">
+                  <img src="./images/github.svg" class="work__code" alt="GitHub">
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <img src="./images/project-1.png" class="work__image" alt="Project 1" />
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+  <!-- ***** Contact ***** -->
+
+  <section class="contact" id="contact">
+    <div class="row">
+      <h2>Get in Touch</h2>
+      <div class="contact__info">
+        <p>
+          Have a question, a project idea, or just want to chat? 
+          I’d be happy to hear from you. I’m always open to new 
+          opportunities, collaborations, and meaningful conversations.
+        </p>
+        
+        <a href="mailto:hanw8950@gmail.com" class="btn">hanw8950@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ***** Footer ***** -->
+
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+      <!-- Update the links to point to your accounts -->
+      <ul class="footer__social-links">
+        
+        <li class="footer__social-link-item">
+          <a href="https://github.com/doublehan2023/" title="Link to Github Profile">
+            <img src="./images/github.svg" class="footer__social-image" alt="Github">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href=https://www.linkedin.com/in/hanwang520/>
+            <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image" alt="Linkedin">
+          </a>
+        </li>
+      </ul>
+
+      
+      <p>
+        &copy; 2025 - Han Wang.
+      </p>
+      
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" title="Back to Top">
+    <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
+  </a>
+  <script src="./index.js"></script>
+</body>
+
+</html>
