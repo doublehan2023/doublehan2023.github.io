@@ -34,12 +34,10 @@
     --line-height-normal: 1.7;
     --line-height-small: 1.2;
 
-    --black: #000;
-    --pink: #009379;
-
-    --white: #ffffff;
-    --white-1: #e5e5e6da;
-    --pink-1: #F9E6F0;
+    --text-color: black;
+    --button-color: #009379; 
+    --base-color: white;
+    --base-color-1: #F9E6F0;
 
 
     --container-max-width: 1180px;
@@ -54,6 +52,13 @@
     --gutter-small: 2rem;
 
     
+}
+
+.dark-mode {
+    --text-color: white;
+    --button-color: #009379; 
+    --base-color: black;
+    --base-color-1: black;
 }
 
 html {
@@ -72,15 +77,65 @@ body {
     font-size: var(--font-size-small);
     font-family: var(--font-stack);
     font-weight: 400;
-    color: var(--black);
+    color: var(--text-color);
     line-height: var(--line-height-normal);
-    background: var(--white);
+    background: var(--base-color);
     overflow-x: hidden;
 }
+
+/* ----- Theme Toggle (top-left) ----- */
+#theme-toggle {
+    position: fixed;
+    top: 4rem;
+    left: 4rem;
+    height: 4.2rem;
+    width: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--button-color);
+    color: var(--base-color);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    cursor: pointer;
+    z-index: 60;
+    font-size: 1.8rem;
+    transition: transform 0.12s ease, background 0.2s ease, color 0.2s ease;
+}
+
+#theme-toggle:active {
+    transform: scale(0.96);
+}
+
+/* Make sure focus outlines are visible for keyboard users */
+#theme-toggle:focus {
+    outline: 2px solid var(--button-color);
+    outline-offset: 2px;
+}
+
+@media(max-width: 500px) {
+    #theme-toggle {
+        top: 1rem;
+        left: 1rem;
+        height: 3.8rem;
+        width: 3.8rem;
+        font-size: 1.6rem;
+    }
+}
+
+/* size the svg inside the button */
+#theme-toggle img {
+    height: 60%;
+    width: 60%;
+    display: block;
+}
+
 
 .row {
     max-width: var(--container-max-width);
     margin: 0 auto;
+ 
 }
 
 @media(max-width: 1340px) {
@@ -127,7 +182,7 @@ h3 {
     font-family: 'Jost', sans-serif;
     font-weight: 400;
     line-height: var(--line-height-small);
-    color: var(--black);
+    color: var(--text-color);
 }
 
 .heading-primary {
@@ -152,7 +207,7 @@ h2::after {
     display: block;
     height: 2px;
     width: 10rem;
-    background: var(--pink);
+    background: var(--button-color);
     margin: var(--gutter-small) 0;
 }
 
@@ -189,8 +244,11 @@ p {
 /* ----- Buttons and Links ----- */
 /* --------------------------------------- */
 
+
+
+
 a {
-    color: var(--white);
+    color: var(--base-color);
     font-weight: 400;
     font-family: 'Jost', sans-serif;
     transition: all .2s;
@@ -203,7 +261,7 @@ a {
 
 button:focus,
 a:focus {
-    outline: 2px solid var(--pink);
+    outline: 2px solid var(--button-color);
 }
 
 body:not(.user-is-tabbing) button:focus,
@@ -212,7 +270,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .link:hover {
-    color: var(--pink);
+    color: var(--button-color);
 }
 
 .btn {
@@ -221,7 +279,7 @@ body:not(.user-is-tabbing) a:focus {
     padding: 1rem 4.2rem;
     text-decoration: none;
     color: inherit;
-    border: 1px solid  var(--pink);
+    border: 1px solid  var(--button-color);
     font-weight: 400;
 }
 
@@ -236,7 +294,7 @@ body:not(.user-is-tabbing) a:focus {
     top: 0;
     left: 0;
     right: 100%;
-    background: var(--white);
+    background: var(--base-color);
     height: 100%;
     z-index: -1;
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
@@ -245,11 +303,11 @@ body:not(.user-is-tabbing) a:focus {
 .btn:hover::after,
 .btn:focus::after {
     right: 0;
-    background: var(--pink);
+    background: var(--button-color);
 }
 
 .btn--pink {
-    background: var(--pink);
+    background: var(--button-color);
     transition: all 0.2s;
 }
 
@@ -268,7 +326,7 @@ body:not(.user-is-tabbing) a:focus {
     padding: .6rem;
     color: inherit;
     text-decoration: none;
-    border-bottom: 1px solid var(--pink);
+    border-bottom: 1px solid var(--button-color);
 }
 
 .link__text::after {
@@ -278,7 +336,7 @@ body:not(.user-is-tabbing) a:focus {
     top: 0;
     left: 0;
     right: 100%;
-    background: var(--white);
+    background: var(--base-color);
     height: 100%;
     z-index: -1;
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
@@ -291,7 +349,7 @@ body:not(.user-is-tabbing) a:focus {
 .link__text:hover::after,
 .link__text:focus:after {
     right: 0;
-    background: var(--pink);
+    background: var(--button-color);
 }
 
 .link__text span {
@@ -310,7 +368,7 @@ body:not(.user-is-tabbing) a:focus {
     align-items: center;
     height: 5.5rem;
     width: 5.5rem;
-    background-color: var(--pink);
+    background-color: var(--button-color);
     border-radius: 50%;
     z-index: 10;
     visibility: hidden;
@@ -387,18 +445,18 @@ body:not(.user-is-tabbing) a:focus {
     right: 100%;
     display: inline-block;
     height: 1rem;
-    background: var(--white);
+    background: var(--base-color);
     transition: all 0.25s cubic-bezier(1, 0.68, 0.16, 0.9);
 }
 
 .nav__link:hover {
-    color: var(--pink);
+    color: var(--button-color);
 }
 
 .nav__link:hover::after {
     right: 0;
     height: 2px;
-    background: var(--pink);
+    background: var(--button-color);
 }
 
 /* --------------------------------------- */
@@ -409,7 +467,7 @@ body:not(.user-is-tabbing) a:focus {
     /*background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
         url('./images/header.jpg');
     */
-    background-color: var(--pink-1);
+    background-color: var(--base-color-1);
     height: 100vh;
     background-size: cover;
     background-position: center;
